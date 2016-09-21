@@ -1,0 +1,31 @@
+{
+  "name": "angular-material",
+  "description": "first app angular material",
+  "main": "index.html",
+  "authors": [
+    "tolyaganzin"
+  ],
+  "license": "UNLICENSED",
+  "keywords": [
+    "first",
+    "app",
+    "angular",
+    "material"
+  ],
+  "homepage": "https://github.com/tolyaganzin/first-app-angular-material",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.1.1",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "angular-messages": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^0.3.1"
+  }
+}
