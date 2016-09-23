@@ -13,13 +13,13 @@
   ng-controller="menuController as main">
 
     <md-toolbar layout="row">
-      <md-button ng-click="main.menu()">
+      <md-button ng-click="main.menu()" hide-gt-sm aria-label="menu list">
         <md-icon md-svg-src="img/icons/{{main.menuImg}}"></md-icon>
       </md-button>
       <h3>Angular Matrial App</h3>
     </md-toolbar>
     <div class="container" layout="row" flex>
-      <md-sidenav md-is-locked-open="main.isOpen" class="md-whiteframe-4dp">
+      <md-sidenav md-component-id="left" md-is-locked-open="main.isOpen" class="md-whiteframe-4dp">
         <md-list>
           <md-list-item>
             <md-button>
