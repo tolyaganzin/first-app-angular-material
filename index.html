@@ -13,8 +13,12 @@
   ng-controller="menuController as main">
 
     <md-toolbar layout="row">
-      <md-button ng-click="main.menu()" hide-gt-sm aria-label="menu list">
-        <md-icon md-svg-src="img/icons/{{main.menuImg}}"></md-icon>
+      <md-button class="md-fab md-primary rotate" ng-class="{'circle': !main.isOpen} " aria-label="Menu" ng-click="main.menu()" hide-gt-sm aria-label="menu list">
+        <md-icon md-svg-src="img/icons/{{main.menuImg}}" ></md-icon>
+        <md-tooltip>
+         <span ng-show="!main.isOpen">Show menu</span>
+         <span ng-hide="!main.isOpen">Hide menu</span>
+       </md-tooltip>
       </md-button>
       <h3>Angular Matrial App</h3>
     </md-toolbar>
@@ -46,6 +50,14 @@
         <p>
           Bacon ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
+
+        <!-- <div>
+          <div ng-if="bool" class="fade rotate">
+             Fade me in out
+          </div>
+          <button ng-click="bool=true">Fade In!</button>
+          <button ng-click="bool=false">Fade Out!</button>
+        </div> -->
       </md-content>
     </div>
 

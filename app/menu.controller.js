@@ -8,6 +8,8 @@ angular.module('amApp')
     //  console.log(this.isOpen);
       $scope.$watch(function() { return $mdMedia('gt-sm'); }, angular.bind(this,function(isSm) {
         this.isOpen = isSm;
+        if(this.menuImg)
+          this.menuImg = 'menu.svg';
         console.log(this.isOpen);
       }));
 
