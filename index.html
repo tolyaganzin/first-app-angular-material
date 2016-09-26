@@ -19,22 +19,27 @@
       <h3>Angular Matrial App</h3>
     </md-toolbar>
     <div class="container" layout="row" flex>
-      <md-sidenav md-component-id="left" md-is-locked-open="main.isOpen" class="md-whiteframe-4dp">
+
+
+      <!-- <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm');" class="md-whiteframe-4dp"> -->
+
+      <md-sidenav md-is-locked-open="main.isOpen" class="md-whiteframe-4dp">
         <md-list>
           <md-list-item>
-            <md-button>
+            <md-button ng-click="main.menu()">
               <md-icon md-svg-src="img/icons/android.svg" class="avatar"></md-icon>
               Thomas Burleson
             </md-button>
           </md-list-item>
           <md-list-item>
-            <md-button>
+            <md-button ng-click="main.menu()">
               <md-icon md-svg-src="img/icons/account.svg" class="avatar"></md-icon>
               Aron Frost
             </md-button>
           </md-list-item>
         </md-list>
       </md-sidenav>
+
       <md-content id="content" flex>
         <md-icon md-svg-src="img/icons/android.svg" class="avatar"></md-icon>
         <h2>Thomas Burleson</h2>
