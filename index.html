@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <meta charset="utf-8">
-    <title>angular-material</title> -->
+    <meta charset="utf-8">
+    <title>angular-material</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="app.css">
 
   </head>
-  <body ng-app="amApp" layout="column"
-  ng-controller="menuController as main">
+  <body ng-app="amApp" layout="row" ng-controller="menuController as main">
 
-    <md-toolbar layout="row">
-      <md-button class="md-fab md-primary rotate" ng-class="{'circle': !main.isOpen} " aria-label="Menu" ng-click="main.menu()" hide-gt-sm aria-label="menu list">
-        <md-icon md-svg-src="img/icons/{{main.menuImg}}" ></md-icon>
-        <md-tooltip>
-         <span ng-show="!main.isOpen">Show menu</span>
-         <span ng-hide="!main.isOpen">Hide menu</span>
-       </md-tooltip>
-      </md-button>
-      <h3>Angular Matrial App</h3>
-    </md-toolbar>
-    <div class="container" layout="row" flex>
-
-
-      <!-- <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm');" class="md-whiteframe-4dp"> -->
-
-      <md-sidenav md-is-locked-open="main.isOpen" class="md-whiteframe-4dp">
+    <!-- <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm');" class="md-whiteframe-4dp"> -->
+    <md-sidenav  class="md-whiteframe-4dp" layout="column" md-is-locked-open="main.isOpen">
+      <md-toolbar class="side-menu" layout="row" layout-align="center center">
+        <h3>Side nav</h3>
+      </md-toolbar>
+      <md-content>
         <md-list>
           <md-list-item>
             <md-button ng-click="main.menu()">
@@ -42,7 +31,20 @@
             </md-button>
           </md-list-item>
         </md-list>
-      </md-sidenav>
+      <md-content>
+    </md-sidenav>
+
+    <div layout="column"  layout-align="space-between none" flex>
+      <md-toolbar class="md-primary" layout="row">
+        <md-button class="md-icon-button rotate button-menu" ng-class="{'circle': !main.isOpen} " aria-label="Menu" ng-click="main.menu()" hide-gt-sm>
+          <md-icon md-svg-src="img/icons/{{main.menuImg}}" ></md-icon>
+          <md-tooltip>
+           <span ng-show="!main.isOpen">Show menu</span>
+           <span ng-hide="!main.isOpen">Hide menu</span>
+         </md-tooltip>
+        </md-button>
+        <h3>Angular Matrial App</h3>
+      </md-toolbar>
 
       <md-content id="content" flex>
         <md-icon md-svg-src="img/icons/android.svg" class="avatar"></md-icon>
@@ -50,14 +52,6 @@
         <p>
           Bacon ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-
-        <!-- <div>
-          <div ng-if="bool" class="fade rotate">
-             Fade me in out
-          </div>
-          <button ng-click="bool=true">Fade In!</button>
-          <button ng-click="bool=false">Fade Out!</button>
-        </div> -->
       </md-content>
     </div>
 
