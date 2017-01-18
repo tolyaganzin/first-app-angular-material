@@ -1,5 +1,8 @@
 ###My first app angular-material (user list with more description about user)
 #This app has not clear code. The app just worked
+```
+bower install
+```
 ##Nginx config
 ```
 server {
@@ -7,7 +10,7 @@ server {
 	#listen [::]:80 default_server;
 
 	root /var/www/projects/angular-material;
-	index index.php index.html index.htm index.nginx-debian.html;
+	index index.html;
 
 	server_name angular-material.dev www.angular-material.dev;
 
@@ -36,4 +39,7 @@ server {
 	#}
 }
 ```
-### Look my next better app with Angular JS and yii2: https://github.com/tolyaganzin/angular-yii2
+### Look next my better app wit Angular JS:
+# Apps with more better struct and code
+- ui-router material:https://github.com/tolyaganzin/routing
+- bootstrap backend full rest api yii2: https://github.com/tolyaganzin/angular-yii2
