@@ -4,30 +4,25 @@
     <meta charset="utf-8">
     <title>angular-material</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link rel="stylesheet" href="app.css">
 
   </head>
   <body ng-app="amApp" layout="row" ng-controller="menuController as main">
 
-    <!-- <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm');" class="md-whiteframe-4dp"> -->
-    <md-sidenav  class="md-whiteframe-4dp" layout="column" md-is-locked-open="main.isOpen">
-      <md-toolbar class="side-menu" layout="row" layout-align="center center">
+    <md-sidenav class="md-whiteframe-4dp animated" ng-class="{'fadeInLeftBig': main.isOpen}" layout="column"  md-component-id="left" md-is-locked-open="main.isOpen">
+      <md-toolbar class="md-accent" layout="row" layout-align="center center">
         <h3>Side nav</h3>
       </md-toolbar>
       <md-content>
         <md-list>
-          <md-list-item>
-            <md-button ng-click="main.menu()">
-              <md-icon md-svg-src="img/icons/android.svg" class="avatar"></md-icon>
-              Thomas Burleson
-            </md-button>
-          </md-list-item>
-          <md-list-item>
-            <md-button ng-click="main.menu()">
-              <md-icon md-svg-src="img/icons/account.svg" class="avatar"></md-icon>
-              Aron Frost
+          <md-list-item ng-repeat="u in main.users">
+            <md-button ng-click="main.selectUser(u)">
+              <md-icon md-svg-src="img/icons/{{u.avatar}}" class="avatar"></md-icon>
+              {{u.name}}
             </md-button>
           </md-list-item>
         </md-list>
@@ -36,7 +31,7 @@
 
     <div layout="column"  layout-align="space-between none" flex>
       <md-toolbar class="md-primary" layout="row">
-        <md-button class="md-icon-button rotate button-menu" ng-class="{'circle': !main.isOpen} " aria-label="Menu" ng-click="main.menu()" hide-gt-sm>
+        <md-button class="md-icon-button rotate button-menu" ng-class="{'circle': !main.isOpen}" aria-label="Menu" ng-click="main.menu()" hide-gt-sm>
           <md-icon md-svg-src="img/icons/{{main.menuImg}}" ></md-icon>
           <md-tooltip>
            <span ng-show="!main.isOpen">Show menu</span>
@@ -47,11 +42,13 @@
       </md-toolbar>
 
       <md-content id="content" flex>
-        <md-icon md-svg-src="img/icons/android.svg" class="avatar"></md-icon>
-        <h2>Thomas Burleson</h2>
-        <p>
-          Bacon ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <md-icon md-svg-src="img/icons/{{main.selected.avatar}}"  class="avatar"></md-icon>
+        <h2>{{main.selected.name}}</h2>
+        <p>{{main.selected.content}}</p>
+
+        <md-button class="md-fab md-fab-top-right" ng-click="main.share(main.selected)" aria-label="Share">
+          <md-icon md-svg-icon="img/icons/reply.svg"></md-icon>
+        </md-button>
       </md-content>
     </div>
 
@@ -59,13 +56,7 @@
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
     <script src="/bower_components/angular-material/angular-material.js"></script>
-    <!--
-    <script src="/bower_components/angular-messages/angular-messages.js"></script>
-    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="/bower_components/angular-route/angular-route.js"></script>
-    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="/bower_components/angular-touch/angular-touch.js"></script>
-    -->
+
     <script src="/app/menu.controller.js"></script>
 
 

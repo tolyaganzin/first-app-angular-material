@@ -54,3 +54,8 @@ md-list-item > button{
     -o-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
 }
+
+.fadeInLeftBig {
+  transition: all 0.5s ease!important;
+  opacity: 0;
+}
