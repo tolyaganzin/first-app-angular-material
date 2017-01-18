@@ -1,5 +1,5 @@
-###My first app angular-material (user list with more description about user)
-#This app has not clear code. The app just worked
+#My first app angular-material (user list with more description about user)
+##This app has not clear code. The app just worked
 ```
 bower install
 ```
@@ -39,7 +39,8 @@ server {
 	#}
 }
 ```
-### Look next my better app wit Angular JS:
-# Apps with more better struct and code
+# Look next my better app wit Angular JS:
+### Apps with more better struct and code
 - ui-router material:https://github.com/tolyaganzin/routing
 - bootstrap backend full rest api yii2: https://github.com/tolyaganzin/angular-yii2
+- electron bootstrap (descktop): https://github.com/tolyaganzin/Tolya-electron
